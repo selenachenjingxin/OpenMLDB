@@ -9,6 +9,7 @@ OpenMLDB 文档 (|version|)
     about/index 
     quickstart/index
     tutorial/index
+    oenmldb_sql/index
     use_case/index
     deploy/index
     maintain/index
