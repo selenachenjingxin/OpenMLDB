@@ -47,6 +47,8 @@ title: udfs/udfs.h
 | **[distinct_count](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-distinct-count)**()| <br>Compute number of distinct values. |
 | **[double](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-double)**()| <br>Cast string expression to double. |
 | **[drawdown](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-drawdown)**()| <br>Compute drawdown of values. |
+| **[earth_distance](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-earth-distance)**()| <br>Returns the great circle distance between two points on the surface of the Earth. Km as return unit. add a minus (-) sign if heading west (W) or south (S). |
+| **[entropy](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-entropy)**()| <br>Calculate Shannon entropy of a column of values. Null values are skipped. |
 | **[ew_avg](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-ew-avg)**()| <br>Compute exponentially-weighted average of values. It's equivalent to pandas ewm(alpha=<alpha>, adjust=True, ignore_na=True, com=None, span=None, halflife=None, min_periods=0) |
 | **[exp](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-exp)**()| <br>Return the value of e (the base of natural logarithms) raised to the power of expr. |
 | **[farm_fingerprint](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-farm-fingerprint)**()| |
@@ -99,62 +101,6 @@ title: udfs/udfs.h
 | **[minimum](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-minimum)**()| <br>Compute minimum of two arguments. |
 | **[minute](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-minute)**()| <br>Return the minute for a timestamp. |
 | **[month](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-month)**()| <br>Return the month part of a timestamp or date. |
-| **[nvl](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-nvl)**()| |
-| **[nvl2](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-nvl2)**()| <br>nvl2(expr1, expr2, expr3) - Returns expr2 if expr1 is not null, or expr3 otherwise. |
-| **[pmod](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-pmod)**()| <br>Compute pmod of two arguments. If any param is NULL, output NULL. If divisor is 0, output NULL. |
-| **[pow](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-pow)**()| <br>Return the value of expr1 to the power of expr2. |
-| **[power](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-power)**()| |
-| **[radians](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-radians)**()| <br>Returns the argument X, converted from degrees to radians. (Note that π radians equals 180 degrees.) |
-| **[regexp_like](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-regexp-like)**()| <br>pattern match same as RLIKE predicate (based on RE2) |
-| **[replace](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-replace)**()| <br>replace(str, search[, replace]) - Replaces all occurrences of `search` with `replace`|
-| **[reverse](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-reverse)**()| <br>Returns the reversed given string. |
-| **[round](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-round)**()| <br>Return the nearest integer value to expr (in floating-point format), rounding halfway cases away from zero, regardless of the current rounding mode. |
-| **[second](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-second)**()| <br>Return the second for a timestamp. |
-| **[sin](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-sin)**()| <br>Return the sine of expr. |
-| **[size](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-size)**()| <br>Get the size of a List (e.g., result of split) |
-| **[split](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-split)**()| <br>Split string to list by delimeter. Null values are skipped. |
-| **[split_array](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-split-array)**()| <br>Split string to array of string by delimeter. |
-| **[split_by_key](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-split-by-key)**()| <br>Split string by delimeter and split each segment as kv pair, then add each key to output list. Null or illegal segments are skipped. |
-| **[split_by_value](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-split-by-value)**()| <br>Split string by delimeter and split each segment as kv pair, then add each value to output list. Null or illegal segments are skipped. |
-| **[sqrt](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-sqrt)**()| <br>Return square root of expr. |
-| **[std](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-std)**()| |
-| **[stddev](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-stddev)**()| <br>Compute sample standard deviation of values, i.e., `sqrt( sum((x_i - avg)^2) / (n-1) )`|
-| **[stddev_pop](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-stddev-pop)**()| <br>Compute population standard deviation of values, i.e., `sqrt( sum((x_i - avg)^2) / n )`|
-| **[stddev_samp](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-stddev-samp)**()| |
-| **[strcmp](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-strcmp)**()| <br>Returns 0 if the strings are the same, -1 if the first argument is smaller than the second according to the current sort order, and 1 otherwise. |
-| **[string](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-string)**()| <br>Return string converted from timestamp expression. |
-| **[substr](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-substr)**()| |
-| **[substring](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-substring)**()| <br>Return a substring `len` characters long from string str, starting at position `pos`. Alias function: `substr`|
-| **[sum](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-sum)**()| <br>Compute sum of values. |
-| **[sum_cate](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-sum-cate)**()| <br>Compute sum of values grouped by category key and output string. Each group is represented as 'K:V' and separated by comma in outputs and are sorted by key in ascend order. |
-| **[sum_cate_where](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-sum-cate-where)**()| <br>Compute sum of values matching specified condition grouped by category key and output string. Each group is represented as 'K:V' and separated by comma in outputs and are sorted by key in ascend order. |
-| **[sum_where](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-sum-where)**()| <br>Compute sum of values match specified condition. |
-| **[tan](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-tan)**()| <br>Return the tangent of expr. |
-| **[timestamp](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-timestamp)**()| <br>Cast int64, date or string expression to timestamp. |
-| **[top](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-top)**()| <br>Compute top k of values and output string separated by comma. The outputs are sorted in desc order. |
-| **[top1_ratio](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-top1-ratio)**()| <br>Compute the top1 key's ratio. |
-| **[top_n_key_avg_cate_where](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-top-n-key-avg-cate-where)**()| <br>Compute average of values matching specified condition grouped by category key. Output string for top N category keys in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. |
-| **[top_n_key_count_cate_where](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-top-n-key-count-cate-where)**()| <br>Compute count of values matching specified condition grouped by category key. Output string for top N category keys in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. |
-| **[top_n_key_max_cate_where](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-top-n-key-max-cate-where)**()| <br>Compute maximum of values matching specified condition grouped by category key. Output string for top N category keys in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. |
-| **[top_n_key_min_cate_where](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-top-n-key-min-cate-where)**()| <br>Compute minimum of values matching specified condition grouped by category key. Output string for top N category keys in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. |
-| **[top_n_key_sum_cate_where](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-top-n-key-sum-cate-where)**()| <br>Compute sum of values matching specified condition grouped by category key. Output string for top N category keys in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. |
-| **[top_n_value_avg_cate_where](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-top-n-value-avg-cate-where)**()| <br>Compute average of values matching specified condition grouped by category key. Output string for top N aggregate values in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. |
-| **[top_n_value_count_cate_where](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-top-n-value-count-cate-where)**()| <br>Compute count of values matching specified condition grouped by category key. Output string for top N aggregate values in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. |
-| **[top_n_value_max_cate_where](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-top-n-value-max-cate-where)**()| <br>Compute maximum of values matching specified condition grouped by category key. Output string for top N aggregate values in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. |
-| **[top_n_value_min_cate_where](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-top-n-value-min-cate-where)**()| <br>Compute minimum of values matching specified condition grouped by category key. Output string for top N aggregate values in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. |
-| **[top_n_value_sum_cate_where](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-top-n-value-sum-cate-where)**()| <br>Compute sum of values matching specified condition grouped by category key. Output string for top N aggregate values in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. |
-| **[topn_frequency](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-topn-frequency)**()| <br>Return the topN keys sorted by their frequency. |
-| **[truncate](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-truncate)**()| <br>Return the nearest integer that is not greater in magnitude than the expr. |
-| **[ucase](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-ucase)**()| <br>Convert all the characters to uppercase. Note that characters values > 127 are simply returned. |
-| **[unhex](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-unhex)**()| <br>Convert hexadecimal to binary string. |
-| **[unix_timestamp](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-unix-timestamp)**()| <br>Cast date or string expression to unix_timestamp. If empty string or NULL is provided, return current timestamp. |
-| **[upper](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-upper)**()| |
-| **[week](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-week)**()| |
-| **[weekofyear](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-weekofyear)**()| <br>Return the week of year for a timestamp or date. |
-| **[window_split](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-window-split)**()| <br>For each string value from specified column of window, split by delimeter and add segment to output list. Null values are skipped. |
-| **[window_split_by_key](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-window-split-by-key)**()| <br>For each string value from specified column of window, split by delimeter and then split each segment as kv pair, then add each key to output list. Null and illegal segments are skipped. |
-| **[window_split_by_value](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-window-split-by-value)**()| <br>For each string value from specified column of window, split by delimeter and then split each segment as kv pair, then add each value to output list. Null and illegal segments are skipped. |
-| **[year](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-year)**()| <br>Return the year part of a timestamp or date. |
 
 
 ## Functions Documentation
@@ -1250,7 +1196,7 @@ Return the day of week for a timestamp or date.
 0.4.0
 
 
-Note: This function equals the `[week()](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-week)` function.
+Note: This function equals the `week()` function.
 
 Example:
 
@@ -1460,6 +1406,703 @@ SELECT drawdown(value) OVER w;
 **Supported Types**:
 
 * [`list<number>`] 
+
+### function earth_distance
+
+```cpp
+earth_distance()
+```
+
+**Description**:
+
+Returns the great circle distance between two points on the surface of the Earth. Km as return unit. add a minus (-) sign if heading west (W) or south (S). 
+
+**Parameters**: 
+
+  * **ll1** First latitude in degree 
+  * **ll2** First longitude in degree 
+  * **rl1** second latitude in degree 
+  * **rl2** Second longitude in degree
+
+
+**Since**:
+0.8.0
+
+
+
+Example:
+
+```sql
+
+select earth_distance(40, 73, 41, 74)
+-- output 139.7
+```
+
+
+**Supported Types**:
+
+* [`bool`, `bool`, `bool`, `bool`]
+* [`bool`, `bool`, `bool`, `date`]
+* [`bool`, `bool`, `bool`, `number`]
+* [`bool`, `bool`, `bool`, `string`]
+* [`bool`, `bool`, `bool`, `timestamp`]
+* [`bool`, `bool`, `date`, `bool`]
+* [`bool`, `bool`, `date`, `date`]
+* [`bool`, `bool`, `date`, `number`]
+* [`bool`, `bool`, `date`, `string`]
+* [`bool`, `bool`, `date`, `timestamp`]
+* [`bool`, `bool`, `number`, `bool`]
+* [`bool`, `bool`, `number`, `date`]
+* [`bool`, `bool`, `number`, `number`]
+* [`bool`, `bool`, `number`, `string`]
+* [`bool`, `bool`, `number`, `timestamp`]
+* [`bool`, `bool`, `string`, `bool`]
+* [`bool`, `bool`, `string`, `date`]
+* [`bool`, `bool`, `string`, `number`]
+* [`bool`, `bool`, `string`, `string`]
+* [`bool`, `bool`, `string`, `timestamp`]
+* [`bool`, `bool`, `timestamp`, `bool`]
+* [`bool`, `bool`, `timestamp`, `date`]
+* [`bool`, `bool`, `timestamp`, `number`]
+* [`bool`, `bool`, `timestamp`, `string`]
+* [`bool`, `bool`, `timestamp`, `timestamp`]
+* [`bool`, `date`, `bool`, `bool`]
+* [`bool`, `date`, `bool`, `date`]
+* [`bool`, `date`, `bool`, `number`]
+* [`bool`, `date`, `bool`, `string`]
+* [`bool`, `date`, `bool`, `timestamp`]
+* [`bool`, `date`, `date`, `bool`]
+* [`bool`, `date`, `date`, `date`]
+* [`bool`, `date`, `date`, `number`]
+* [`bool`, `date`, `date`, `string`]
+* [`bool`, `date`, `date`, `timestamp`]
+* [`bool`, `date`, `number`, `bool`]
+* [`bool`, `date`, `number`, `date`]
+* [`bool`, `date`, `number`, `number`]
+* [`bool`, `date`, `number`, `string`]
+* [`bool`, `date`, `number`, `timestamp`]
+* [`bool`, `date`, `string`, `bool`]
+* [`bool`, `date`, `string`, `date`]
+* [`bool`, `date`, `string`, `number`]
+* [`bool`, `date`, `string`, `string`]
+* [`bool`, `date`, `string`, `timestamp`]
+* [`bool`, `date`, `timestamp`, `bool`]
+* [`bool`, `date`, `timestamp`, `date`]
+* [`bool`, `date`, `timestamp`, `number`]
+* [`bool`, `date`, `timestamp`, `string`]
+* [`bool`, `date`, `timestamp`, `timestamp`]
+* [`bool`, `number`, `bool`, `bool`]
+* [`bool`, `number`, `bool`, `date`]
+* [`bool`, `number`, `bool`, `number`]
+* [`bool`, `number`, `bool`, `string`]
+* [`bool`, `number`, `bool`, `timestamp`]
+* [`bool`, `number`, `date`, `bool`]
+* [`bool`, `number`, `date`, `date`]
+* [`bool`, `number`, `date`, `number`]
+* [`bool`, `number`, `date`, `string`]
+* [`bool`, `number`, `date`, `timestamp`]
+* [`bool`, `number`, `number`, `bool`]
+* [`bool`, `number`, `number`, `date`]
+* [`bool`, `number`, `number`, `number`]
+* [`bool`, `number`, `number`, `string`]
+* [`bool`, `number`, `number`, `timestamp`]
+* [`bool`, `number`, `string`, `bool`]
+* [`bool`, `number`, `string`, `date`]
+* [`bool`, `number`, `string`, `number`]
+* [`bool`, `number`, `string`, `string`]
+* [`bool`, `number`, `string`, `timestamp`]
+* [`bool`, `number`, `timestamp`, `bool`]
+* [`bool`, `number`, `timestamp`, `date`]
+* [`bool`, `number`, `timestamp`, `number`]
+* [`bool`, `number`, `timestamp`, `string`]
+* [`bool`, `number`, `timestamp`, `timestamp`]
+* [`bool`, `string`, `bool`, `bool`]
+* [`bool`, `string`, `bool`, `date`]
+* [`bool`, `string`, `bool`, `number`]
+* [`bool`, `string`, `bool`, `string`]
+* [`bool`, `string`, `bool`, `timestamp`]
+* [`bool`, `string`, `date`, `bool`]
+* [`bool`, `string`, `date`, `date`]
+* [`bool`, `string`, `date`, `number`]
+* [`bool`, `string`, `date`, `string`]
+* [`bool`, `string`, `date`, `timestamp`]
+* [`bool`, `string`, `number`, `bool`]
+* [`bool`, `string`, `number`, `date`]
+* [`bool`, `string`, `number`, `number`]
+* [`bool`, `string`, `number`, `string`]
+* [`bool`, `string`, `number`, `timestamp`]
+* [`bool`, `string`, `string`, `bool`]
+* [`bool`, `string`, `string`, `date`]
+* [`bool`, `string`, `string`, `number`]
+* [`bool`, `string`, `string`, `string`]
+* [`bool`, `string`, `string`, `timestamp`]
+* [`bool`, `string`, `timestamp`, `bool`]
+* [`bool`, `string`, `timestamp`, `date`]
+* [`bool`, `string`, `timestamp`, `number`]
+* [`bool`, `string`, `timestamp`, `string`]
+* [`bool`, `string`, `timestamp`, `timestamp`]
+* [`bool`, `timestamp`, `bool`, `bool`]
+* [`bool`, `timestamp`, `bool`, `date`]
+* [`bool`, `timestamp`, `bool`, `number`]
+* [`bool`, `timestamp`, `bool`, `string`]
+* [`bool`, `timestamp`, `bool`, `timestamp`]
+* [`bool`, `timestamp`, `date`, `bool`]
+* [`bool`, `timestamp`, `date`, `date`]
+* [`bool`, `timestamp`, `date`, `number`]
+* [`bool`, `timestamp`, `date`, `string`]
+* [`bool`, `timestamp`, `date`, `timestamp`]
+* [`bool`, `timestamp`, `number`, `bool`]
+* [`bool`, `timestamp`, `number`, `date`]
+* [`bool`, `timestamp`, `number`, `number`]
+* [`bool`, `timestamp`, `number`, `string`]
+* [`bool`, `timestamp`, `number`, `timestamp`]
+* [`bool`, `timestamp`, `string`, `bool`]
+* [`bool`, `timestamp`, `string`, `date`]
+* [`bool`, `timestamp`, `string`, `number`]
+* [`bool`, `timestamp`, `string`, `string`]
+* [`bool`, `timestamp`, `string`, `timestamp`]
+* [`bool`, `timestamp`, `timestamp`, `bool`]
+* [`bool`, `timestamp`, `timestamp`, `date`]
+* [`bool`, `timestamp`, `timestamp`, `number`]
+* [`bool`, `timestamp`, `timestamp`, `string`]
+* [`bool`, `timestamp`, `timestamp`, `timestamp`]
+* [`date`, `bool`, `bool`, `bool`]
+* [`date`, `bool`, `bool`, `date`]
+* [`date`, `bool`, `bool`, `number`]
+* [`date`, `bool`, `bool`, `string`]
+* [`date`, `bool`, `bool`, `timestamp`]
+* [`date`, `bool`, `date`, `bool`]
+* [`date`, `bool`, `date`, `date`]
+* [`date`, `bool`, `date`, `number`]
+* [`date`, `bool`, `date`, `string`]
+* [`date`, `bool`, `date`, `timestamp`]
+* [`date`, `bool`, `number`, `bool`]
+* [`date`, `bool`, `number`, `date`]
+* [`date`, `bool`, `number`, `number`]
+* [`date`, `bool`, `number`, `string`]
+* [`date`, `bool`, `number`, `timestamp`]
+* [`date`, `bool`, `string`, `bool`]
+* [`date`, `bool`, `string`, `date`]
+* [`date`, `bool`, `string`, `number`]
+* [`date`, `bool`, `string`, `string`]
+* [`date`, `bool`, `string`, `timestamp`]
+* [`date`, `bool`, `timestamp`, `bool`]
+* [`date`, `bool`, `timestamp`, `date`]
+* [`date`, `bool`, `timestamp`, `number`]
+* [`date`, `bool`, `timestamp`, `string`]
+* [`date`, `bool`, `timestamp`, `timestamp`]
+* [`date`, `date`, `bool`, `bool`]
+* [`date`, `date`, `bool`, `date`]
+* [`date`, `date`, `bool`, `number`]
+* [`date`, `date`, `bool`, `string`]
+* [`date`, `date`, `bool`, `timestamp`]
+* [`date`, `date`, `date`, `bool`]
+* [`date`, `date`, `date`, `date`]
+* [`date`, `date`, `date`, `number`]
+* [`date`, `date`, `date`, `string`]
+* [`date`, `date`, `date`, `timestamp`]
+* [`date`, `date`, `number`, `bool`]
+* [`date`, `date`, `number`, `date`]
+* [`date`, `date`, `number`, `number`]
+* [`date`, `date`, `number`, `string`]
+* [`date`, `date`, `number`, `timestamp`]
+* [`date`, `date`, `string`, `bool`]
+* [`date`, `date`, `string`, `date`]
+* [`date`, `date`, `string`, `number`]
+* [`date`, `date`, `string`, `string`]
+* [`date`, `date`, `string`, `timestamp`]
+* [`date`, `date`, `timestamp`, `bool`]
+* [`date`, `date`, `timestamp`, `date`]
+* [`date`, `date`, `timestamp`, `number`]
+* [`date`, `date`, `timestamp`, `string`]
+* [`date`, `date`, `timestamp`, `timestamp`]
+* [`date`, `number`, `bool`, `bool`]
+* [`date`, `number`, `bool`, `date`]
+* [`date`, `number`, `bool`, `number`]
+* [`date`, `number`, `bool`, `string`]
+* [`date`, `number`, `bool`, `timestamp`]
+* [`date`, `number`, `date`, `bool`]
+* [`date`, `number`, `date`, `date`]
+* [`date`, `number`, `date`, `number`]
+* [`date`, `number`, `date`, `string`]
+* [`date`, `number`, `date`, `timestamp`]
+* [`date`, `number`, `number`, `bool`]
+* [`date`, `number`, `number`, `date`]
+* [`date`, `number`, `number`, `number`]
+* [`date`, `number`, `number`, `string`]
+* [`date`, `number`, `number`, `timestamp`]
+* [`date`, `number`, `string`, `bool`]
+* [`date`, `number`, `string`, `date`]
+* [`date`, `number`, `string`, `number`]
+* [`date`, `number`, `string`, `string`]
+* [`date`, `number`, `string`, `timestamp`]
+* [`date`, `number`, `timestamp`, `bool`]
+* [`date`, `number`, `timestamp`, `date`]
+* [`date`, `number`, `timestamp`, `number`]
+* [`date`, `number`, `timestamp`, `string`]
+* [`date`, `number`, `timestamp`, `timestamp`]
+* [`date`, `string`, `bool`, `bool`]
+* [`date`, `string`, `bool`, `date`]
+* [`date`, `string`, `bool`, `number`]
+* [`date`, `string`, `bool`, `string`]
+* [`date`, `string`, `bool`, `timestamp`]
+* [`date`, `string`, `date`, `bool`]
+* [`date`, `string`, `date`, `date`]
+* [`date`, `string`, `date`, `number`]
+* [`date`, `string`, `date`, `string`]
+* [`date`, `string`, `date`, `timestamp`]
+* [`date`, `string`, `number`, `bool`]
+* [`date`, `string`, `number`, `date`]
+* [`date`, `string`, `number`, `number`]
+* [`date`, `string`, `number`, `string`]
+* [`date`, `string`, `number`, `timestamp`]
+* [`date`, `string`, `string`, `bool`]
+* [`date`, `string`, `string`, `date`]
+* [`date`, `string`, `string`, `number`]
+* [`date`, `string`, `string`, `string`]
+* [`date`, `string`, `string`, `timestamp`]
+* [`date`, `string`, `timestamp`, `bool`]
+* [`date`, `string`, `timestamp`, `date`]
+* [`date`, `string`, `timestamp`, `number`]
+* [`date`, `string`, `timestamp`, `string`]
+* [`date`, `string`, `timestamp`, `timestamp`]
+* [`date`, `timestamp`, `bool`, `bool`]
+* [`date`, `timestamp`, `bool`, `date`]
+* [`date`, `timestamp`, `bool`, `number`]
+* [`date`, `timestamp`, `bool`, `string`]
+* [`date`, `timestamp`, `bool`, `timestamp`]
+* [`date`, `timestamp`, `date`, `bool`]
+* [`date`, `timestamp`, `date`, `date`]
+* [`date`, `timestamp`, `date`, `number`]
+* [`date`, `timestamp`, `date`, `string`]
+* [`date`, `timestamp`, `date`, `timestamp`]
+* [`date`, `timestamp`, `number`, `bool`]
+* [`date`, `timestamp`, `number`, `date`]
+* [`date`, `timestamp`, `number`, `number`]
+* [`date`, `timestamp`, `number`, `string`]
+* [`date`, `timestamp`, `number`, `timestamp`]
+* [`date`, `timestamp`, `string`, `bool`]
+* [`date`, `timestamp`, `string`, `date`]
+* [`date`, `timestamp`, `string`, `number`]
+* [`date`, `timestamp`, `string`, `string`]
+* [`date`, `timestamp`, `string`, `timestamp`]
+* [`date`, `timestamp`, `timestamp`, `bool`]
+* [`date`, `timestamp`, `timestamp`, `date`]
+* [`date`, `timestamp`, `timestamp`, `number`]
+* [`date`, `timestamp`, `timestamp`, `string`]
+* [`date`, `timestamp`, `timestamp`, `timestamp`]
+* [`number`, `bool`, `bool`, `bool`]
+* [`number`, `bool`, `bool`, `date`]
+* [`number`, `bool`, `bool`, `number`]
+* [`number`, `bool`, `bool`, `string`]
+* [`number`, `bool`, `bool`, `timestamp`]
+* [`number`, `bool`, `date`, `bool`]
+* [`number`, `bool`, `date`, `date`]
+* [`number`, `bool`, `date`, `number`]
+* [`number`, `bool`, `date`, `string`]
+* [`number`, `bool`, `date`, `timestamp`]
+* [`number`, `bool`, `number`, `bool`]
+* [`number`, `bool`, `number`, `date`]
+* [`number`, `bool`, `number`, `number`]
+* [`number`, `bool`, `number`, `string`]
+* [`number`, `bool`, `number`, `timestamp`]
+* [`number`, `bool`, `string`, `bool`]
+* [`number`, `bool`, `string`, `date`]
+* [`number`, `bool`, `string`, `number`]
+* [`number`, `bool`, `string`, `string`]
+* [`number`, `bool`, `string`, `timestamp`]
+* [`number`, `bool`, `timestamp`, `bool`]
+* [`number`, `bool`, `timestamp`, `date`]
+* [`number`, `bool`, `timestamp`, `number`]
+* [`number`, `bool`, `timestamp`, `string`]
+* [`number`, `bool`, `timestamp`, `timestamp`]
+* [`number`, `date`, `bool`, `bool`]
+* [`number`, `date`, `bool`, `date`]
+* [`number`, `date`, `bool`, `number`]
+* [`number`, `date`, `bool`, `string`]
+* [`number`, `date`, `bool`, `timestamp`]
+* [`number`, `date`, `date`, `bool`]
+* [`number`, `date`, `date`, `date`]
+* [`number`, `date`, `date`, `number`]
+* [`number`, `date`, `date`, `string`]
+* [`number`, `date`, `date`, `timestamp`]
+* [`number`, `date`, `number`, `bool`]
+* [`number`, `date`, `number`, `date`]
+* [`number`, `date`, `number`, `number`]
+* [`number`, `date`, `number`, `string`]
+* [`number`, `date`, `number`, `timestamp`]
+* [`number`, `date`, `string`, `bool`]
+* [`number`, `date`, `string`, `date`]
+* [`number`, `date`, `string`, `number`]
+* [`number`, `date`, `string`, `string`]
+* [`number`, `date`, `string`, `timestamp`]
+* [`number`, `date`, `timestamp`, `bool`]
+* [`number`, `date`, `timestamp`, `date`]
+* [`number`, `date`, `timestamp`, `number`]
+* [`number`, `date`, `timestamp`, `string`]
+* [`number`, `date`, `timestamp`, `timestamp`]
+* [`number`, `number`, `bool`, `bool`]
+* [`number`, `number`, `bool`, `date`]
+* [`number`, `number`, `bool`, `number`]
+* [`number`, `number`, `bool`, `string`]
+* [`number`, `number`, `bool`, `timestamp`]
+* [`number`, `number`, `date`, `bool`]
+* [`number`, `number`, `date`, `date`]
+* [`number`, `number`, `date`, `number`]
+* [`number`, `number`, `date`, `string`]
+* [`number`, `number`, `date`, `timestamp`]
+* [`number`, `number`, `number`, `bool`]
+* [`number`, `number`, `number`, `date`]
+* [`number`, `number`, `number`, `number`]
+* [`number`, `number`, `number`, `string`]
+* [`number`, `number`, `number`, `timestamp`]
+* [`number`, `number`, `string`, `bool`]
+* [`number`, `number`, `string`, `date`]
+* [`number`, `number`, `string`, `number`]
+* [`number`, `number`, `string`, `string`]
+* [`number`, `number`, `string`, `timestamp`]
+* [`number`, `number`, `timestamp`, `bool`]
+* [`number`, `number`, `timestamp`, `date`]
+* [`number`, `number`, `timestamp`, `number`]
+* [`number`, `number`, `timestamp`, `string`]
+* [`number`, `number`, `timestamp`, `timestamp`]
+* [`number`, `string`, `bool`, `bool`]
+* [`number`, `string`, `bool`, `date`]
+* [`number`, `string`, `bool`, `number`]
+* [`number`, `string`, `bool`, `string`]
+* [`number`, `string`, `bool`, `timestamp`]
+* [`number`, `string`, `date`, `bool`]
+* [`number`, `string`, `date`, `date`]
+* [`number`, `string`, `date`, `number`]
+* [`number`, `string`, `date`, `string`]
+* [`number`, `string`, `date`, `timestamp`]
+* [`number`, `string`, `number`, `bool`]
+* [`number`, `string`, `number`, `date`]
+* [`number`, `string`, `number`, `number`]
+* [`number`, `string`, `number`, `string`]
+* [`number`, `string`, `number`, `timestamp`]
+* [`number`, `string`, `string`, `bool`]
+* [`number`, `string`, `string`, `date`]
+* [`number`, `string`, `string`, `number`]
+* [`number`, `string`, `string`, `string`]
+* [`number`, `string`, `string`, `timestamp`]
+* [`number`, `string`, `timestamp`, `bool`]
+* [`number`, `string`, `timestamp`, `date`]
+* [`number`, `string`, `timestamp`, `number`]
+* [`number`, `string`, `timestamp`, `string`]
+* [`number`, `string`, `timestamp`, `timestamp`]
+* [`number`, `timestamp`, `bool`, `bool`]
+* [`number`, `timestamp`, `bool`, `date`]
+* [`number`, `timestamp`, `bool`, `number`]
+* [`number`, `timestamp`, `bool`, `string`]
+* [`number`, `timestamp`, `bool`, `timestamp`]
+* [`number`, `timestamp`, `date`, `bool`]
+* [`number`, `timestamp`, `date`, `date`]
+* [`number`, `timestamp`, `date`, `number`]
+* [`number`, `timestamp`, `date`, `string`]
+* [`number`, `timestamp`, `date`, `timestamp`]
+* [`number`, `timestamp`, `number`, `bool`]
+* [`number`, `timestamp`, `number`, `date`]
+* [`number`, `timestamp`, `number`, `number`]
+* [`number`, `timestamp`, `number`, `string`]
+* [`number`, `timestamp`, `number`, `timestamp`]
+* [`number`, `timestamp`, `string`, `bool`]
+* [`number`, `timestamp`, `string`, `date`]
+* [`number`, `timestamp`, `string`, `number`]
+* [`number`, `timestamp`, `string`, `string`]
+* [`number`, `timestamp`, `string`, `timestamp`]
+* [`number`, `timestamp`, `timestamp`, `bool`]
+* [`number`, `timestamp`, `timestamp`, `date`]
+* [`number`, `timestamp`, `timestamp`, `number`]
+* [`number`, `timestamp`, `timestamp`, `string`]
+* [`number`, `timestamp`, `timestamp`, `timestamp`]
+* [`string`, `bool`, `bool`, `bool`]
+* [`string`, `bool`, `bool`, `date`]
+* [`string`, `bool`, `bool`, `number`]
+* [`string`, `bool`, `bool`, `string`]
+* [`string`, `bool`, `bool`, `timestamp`]
+* [`string`, `bool`, `date`, `bool`]
+* [`string`, `bool`, `date`, `date`]
+* [`string`, `bool`, `date`, `number`]
+* [`string`, `bool`, `date`, `string`]
+* [`string`, `bool`, `date`, `timestamp`]
+* [`string`, `bool`, `number`, `bool`]
+* [`string`, `bool`, `number`, `date`]
+* [`string`, `bool`, `number`, `number`]
+* [`string`, `bool`, `number`, `string`]
+* [`string`, `bool`, `number`, `timestamp`]
+* [`string`, `bool`, `string`, `bool`]
+* [`string`, `bool`, `string`, `date`]
+* [`string`, `bool`, `string`, `number`]
+* [`string`, `bool`, `string`, `string`]
+* [`string`, `bool`, `string`, `timestamp`]
+* [`string`, `bool`, `timestamp`, `bool`]
+* [`string`, `bool`, `timestamp`, `date`]
+* [`string`, `bool`, `timestamp`, `number`]
+* [`string`, `bool`, `timestamp`, `string`]
+* [`string`, `bool`, `timestamp`, `timestamp`]
+* [`string`, `date`, `bool`, `bool`]
+* [`string`, `date`, `bool`, `date`]
+* [`string`, `date`, `bool`, `number`]
+* [`string`, `date`, `bool`, `string`]
+* [`string`, `date`, `bool`, `timestamp`]
+* [`string`, `date`, `date`, `bool`]
+* [`string`, `date`, `date`, `date`]
+* [`string`, `date`, `date`, `number`]
+* [`string`, `date`, `date`, `string`]
+* [`string`, `date`, `date`, `timestamp`]
+* [`string`, `date`, `number`, `bool`]
+* [`string`, `date`, `number`, `date`]
+* [`string`, `date`, `number`, `number`]
+* [`string`, `date`, `number`, `string`]
+* [`string`, `date`, `number`, `timestamp`]
+* [`string`, `date`, `string`, `bool`]
+* [`string`, `date`, `string`, `date`]
+* [`string`, `date`, `string`, `number`]
+* [`string`, `date`, `string`, `string`]
+* [`string`, `date`, `string`, `timestamp`]
+* [`string`, `date`, `timestamp`, `bool`]
+* [`string`, `date`, `timestamp`, `date`]
+* [`string`, `date`, `timestamp`, `number`]
+* [`string`, `date`, `timestamp`, `string`]
+* [`string`, `date`, `timestamp`, `timestamp`]
+* [`string`, `number`, `bool`, `bool`]
+* [`string`, `number`, `bool`, `date`]
+* [`string`, `number`, `bool`, `number`]
+* [`string`, `number`, `bool`, `string`]
+* [`string`, `number`, `bool`, `timestamp`]
+* [`string`, `number`, `date`, `bool`]
+* [`string`, `number`, `date`, `date`]
+* [`string`, `number`, `date`, `number`]
+* [`string`, `number`, `date`, `string`]
+* [`string`, `number`, `date`, `timestamp`]
+* [`string`, `number`, `number`, `bool`]
+* [`string`, `number`, `number`, `date`]
+* [`string`, `number`, `number`, `number`]
+* [`string`, `number`, `number`, `string`]
+* [`string`, `number`, `number`, `timestamp`]
+* [`string`, `number`, `string`, `bool`]
+* [`string`, `number`, `string`, `date`]
+* [`string`, `number`, `string`, `number`]
+* [`string`, `number`, `string`, `string`]
+* [`string`, `number`, `string`, `timestamp`]
+* [`string`, `number`, `timestamp`, `bool`]
+* [`string`, `number`, `timestamp`, `date`]
+* [`string`, `number`, `timestamp`, `number`]
+* [`string`, `number`, `timestamp`, `string`]
+* [`string`, `number`, `timestamp`, `timestamp`]
+* [`string`, `string`, `bool`, `bool`]
+* [`string`, `string`, `bool`, `date`]
+* [`string`, `string`, `bool`, `number`]
+* [`string`, `string`, `bool`, `string`]
+* [`string`, `string`, `bool`, `timestamp`]
+* [`string`, `string`, `date`, `bool`]
+* [`string`, `string`, `date`, `date`]
+* [`string`, `string`, `date`, `number`]
+* [`string`, `string`, `date`, `string`]
+* [`string`, `string`, `date`, `timestamp`]
+* [`string`, `string`, `number`, `bool`]
+* [`string`, `string`, `number`, `date`]
+* [`string`, `string`, `number`, `number`]
+* [`string`, `string`, `number`, `string`]
+* [`string`, `string`, `number`, `timestamp`]
+* [`string`, `string`, `string`, `bool`]
+* [`string`, `string`, `string`, `date`]
+* [`string`, `string`, `string`, `number`]
+* [`string`, `string`, `string`, `string`]
+* [`string`, `string`, `string`, `timestamp`]
+* [`string`, `string`, `timestamp`, `bool`]
+* [`string`, `string`, `timestamp`, `date`]
+* [`string`, `string`, `timestamp`, `number`]
+* [`string`, `string`, `timestamp`, `string`]
+* [`string`, `string`, `timestamp`, `timestamp`]
+* [`string`, `timestamp`, `bool`, `bool`]
+* [`string`, `timestamp`, `bool`, `date`]
+* [`string`, `timestamp`, `bool`, `number`]
+* [`string`, `timestamp`, `bool`, `string`]
+* [`string`, `timestamp`, `bool`, `timestamp`]
+* [`string`, `timestamp`, `date`, `bool`]
+* [`string`, `timestamp`, `date`, `date`]
+* [`string`, `timestamp`, `date`, `number`]
+* [`string`, `timestamp`, `date`, `string`]
+* [`string`, `timestamp`, `date`, `timestamp`]
+* [`string`, `timestamp`, `number`, `bool`]
+* [`string`, `timestamp`, `number`, `date`]
+* [`string`, `timestamp`, `number`, `number`]
+* [`string`, `timestamp`, `number`, `string`]
+* [`string`, `timestamp`, `number`, `timestamp`]
+* [`string`, `timestamp`, `string`, `bool`]
+* [`string`, `timestamp`, `string`, `date`]
+* [`string`, `timestamp`, `string`, `number`]
+* [`string`, `timestamp`, `string`, `string`]
+* [`string`, `timestamp`, `string`, `timestamp`]
+* [`string`, `timestamp`, `timestamp`, `bool`]
+* [`string`, `timestamp`, `timestamp`, `date`]
+* [`string`, `timestamp`, `timestamp`, `number`]
+* [`string`, `timestamp`, `timestamp`, `string`]
+* [`string`, `timestamp`, `timestamp`, `timestamp`]
+* [`timestamp`, `bool`, `bool`, `bool`]
+* [`timestamp`, `bool`, `bool`, `date`]
+* [`timestamp`, `bool`, `bool`, `number`]
+* [`timestamp`, `bool`, `bool`, `string`]
+* [`timestamp`, `bool`, `bool`, `timestamp`]
+* [`timestamp`, `bool`, `date`, `bool`]
+* [`timestamp`, `bool`, `date`, `date`]
+* [`timestamp`, `bool`, `date`, `number`]
+* [`timestamp`, `bool`, `date`, `string`]
+* [`timestamp`, `bool`, `date`, `timestamp`]
+* [`timestamp`, `bool`, `number`, `bool`]
+* [`timestamp`, `bool`, `number`, `date`]
+* [`timestamp`, `bool`, `number`, `number`]
+* [`timestamp`, `bool`, `number`, `string`]
+* [`timestamp`, `bool`, `number`, `timestamp`]
+* [`timestamp`, `bool`, `string`, `bool`]
+* [`timestamp`, `bool`, `string`, `date`]
+* [`timestamp`, `bool`, `string`, `number`]
+* [`timestamp`, `bool`, `string`, `string`]
+* [`timestamp`, `bool`, `string`, `timestamp`]
+* [`timestamp`, `bool`, `timestamp`, `bool`]
+* [`timestamp`, `bool`, `timestamp`, `date`]
+* [`timestamp`, `bool`, `timestamp`, `number`]
+* [`timestamp`, `bool`, `timestamp`, `string`]
+* [`timestamp`, `bool`, `timestamp`, `timestamp`]
+* [`timestamp`, `date`, `bool`, `bool`]
+* [`timestamp`, `date`, `bool`, `date`]
+* [`timestamp`, `date`, `bool`, `number`]
+* [`timestamp`, `date`, `bool`, `string`]
+* [`timestamp`, `date`, `bool`, `timestamp`]
+* [`timestamp`, `date`, `date`, `bool`]
+* [`timestamp`, `date`, `date`, `date`]
+* [`timestamp`, `date`, `date`, `number`]
+* [`timestamp`, `date`, `date`, `string`]
+* [`timestamp`, `date`, `date`, `timestamp`]
+* [`timestamp`, `date`, `number`, `bool`]
+* [`timestamp`, `date`, `number`, `date`]
+* [`timestamp`, `date`, `number`, `number`]
+* [`timestamp`, `date`, `number`, `string`]
+* [`timestamp`, `date`, `number`, `timestamp`]
+* [`timestamp`, `date`, `string`, `bool`]
+* [`timestamp`, `date`, `string`, `date`]
+* [`timestamp`, `date`, `string`, `number`]
+* [`timestamp`, `date`, `string`, `string`]
+* [`timestamp`, `date`, `string`, `timestamp`]
+* [`timestamp`, `date`, `timestamp`, `bool`]
+* [`timestamp`, `date`, `timestamp`, `date`]
+* [`timestamp`, `date`, `timestamp`, `number`]
+* [`timestamp`, `date`, `timestamp`, `string`]
+* [`timestamp`, `date`, `timestamp`, `timestamp`]
+* [`timestamp`, `number`, `bool`, `bool`]
+* [`timestamp`, `number`, `bool`, `date`]
+* [`timestamp`, `number`, `bool`, `number`]
+* [`timestamp`, `number`, `bool`, `string`]
+* [`timestamp`, `number`, `bool`, `timestamp`]
+* [`timestamp`, `number`, `date`, `bool`]
+* [`timestamp`, `number`, `date`, `date`]
+* [`timestamp`, `number`, `date`, `number`]
+* [`timestamp`, `number`, `date`, `string`]
+* [`timestamp`, `number`, `date`, `timestamp`]
+* [`timestamp`, `number`, `number`, `bool`]
+* [`timestamp`, `number`, `number`, `date`]
+* [`timestamp`, `number`, `number`, `number`]
+* [`timestamp`, `number`, `number`, `string`]
+* [`timestamp`, `number`, `number`, `timestamp`]
+* [`timestamp`, `number`, `string`, `bool`]
+* [`timestamp`, `number`, `string`, `date`]
+* [`timestamp`, `number`, `string`, `number`]
+* [`timestamp`, `number`, `string`, `string`]
+* [`timestamp`, `number`, `string`, `timestamp`]
+* [`timestamp`, `number`, `timestamp`, `bool`]
+* [`timestamp`, `number`, `timestamp`, `date`]
+* [`timestamp`, `number`, `timestamp`, `number`]
+* [`timestamp`, `number`, `timestamp`, `string`]
+* [`timestamp`, `number`, `timestamp`, `timestamp`]
+* [`timestamp`, `string`, `bool`, `bool`]
+* [`timestamp`, `string`, `bool`, `date`]
+* [`timestamp`, `string`, `bool`, `number`]
+* [`timestamp`, `string`, `bool`, `string`]
+* [`timestamp`, `string`, `bool`, `timestamp`]
+* [`timestamp`, `string`, `date`, `bool`]
+* [`timestamp`, `string`, `date`, `date`]
+* [`timestamp`, `string`, `date`, `number`]
+* [`timestamp`, `string`, `date`, `string`]
+* [`timestamp`, `string`, `date`, `timestamp`]
+* [`timestamp`, `string`, `number`, `bool`]
+* [`timestamp`, `string`, `number`, `date`]
+* [`timestamp`, `string`, `number`, `number`]
+* [`timestamp`, `string`, `number`, `string`]
+* [`timestamp`, `string`, `number`, `timestamp`]
+* [`timestamp`, `string`, `string`, `bool`]
+* [`timestamp`, `string`, `string`, `date`]
+* [`timestamp`, `string`, `string`, `number`]
+* [`timestamp`, `string`, `string`, `string`]
+* [`timestamp`, `string`, `string`, `timestamp`]
+* [`timestamp`, `string`, `timestamp`, `bool`]
+* [`timestamp`, `string`, `timestamp`, `date`]
+* [`timestamp`, `string`, `timestamp`, `number`]
+* [`timestamp`, `string`, `timestamp`, `string`]
+* [`timestamp`, `string`, `timestamp`, `timestamp`]
+* [`timestamp`, `timestamp`, `bool`, `bool`]
+* [`timestamp`, `timestamp`, `bool`, `date`]
+* [`timestamp`, `timestamp`, `bool`, `number`]
+* [`timestamp`, `timestamp`, `bool`, `string`]
+* [`timestamp`, `timestamp`, `bool`, `timestamp`]
+* [`timestamp`, `timestamp`, `date`, `bool`]
+* [`timestamp`, `timestamp`, `date`, `date`]
+* [`timestamp`, `timestamp`, `date`, `number`]
+* [`timestamp`, `timestamp`, `date`, `string`]
+* [`timestamp`, `timestamp`, `date`, `timestamp`]
+* [`timestamp`, `timestamp`, `number`, `bool`]
+* [`timestamp`, `timestamp`, `number`, `date`]
+* [`timestamp`, `timestamp`, `number`, `number`]
+* [`timestamp`, `timestamp`, `number`, `string`]
+* [`timestamp`, `timestamp`, `number`, `timestamp`]
+* [`timestamp`, `timestamp`, `string`, `bool`]
+* [`timestamp`, `timestamp`, `string`, `date`]
+* [`timestamp`, `timestamp`, `string`, `number`]
+* [`timestamp`, `timestamp`, `string`, `string`]
+* [`timestamp`, `timestamp`, `string`, `timestamp`]
+* [`timestamp`, `timestamp`, `timestamp`, `bool`]
+* [`timestamp`, `timestamp`, `timestamp`, `date`]
+* [`timestamp`, `timestamp`, `timestamp`, `number`]
+* [`timestamp`, `timestamp`, `timestamp`, `string`]
+* [`timestamp`, `timestamp`, `timestamp`, `timestamp`] 
+
+### function entropy
+
+```cpp
+entropy()
+```
+
+**Description**:
+
+Calculate Shannon entropy of a column of values. Null values are skipped. 
+
+**Parameters**: 
+
+  * **value** Specify value column to aggregate on.
+
+
+**Since**:
+0.8.0
+
+
+
+Example:
+
+| col1 | | 1 | | 1 | | 2 | | 3 | ```sql
+
+select entropy(col1) from t1
+-- output 1.5
+```
+
+
+**Supported Types**:
+
+* [`list<bool>`]
+* [`list<date>`]
+* [`list<number>`]
+* [`list<string>`]
+* [`list<timestamp>`] 
 
 ### function ew_avg
 
@@ -3007,2171 +3650,6 @@ Example:
 
 select month(timestamp(1590115420000));
 -- output 5
-```
-
-
-**Supported Types**:
-
-* [`date`]
-* [`int64`]
-* [`timestamp`] 
-
-### function nvl
-
-```cpp
-nvl()
-```
-
-**Description**:
-
-
-alias to if_null 
-
-### function nvl2
-
-```cpp
-nvl2()
-```
-
-**Description**:
-
-nvl2(expr1, expr2, expr3) - Returns expr2 if expr1 is not null, or expr3 otherwise. 
-
-**Parameters**: 
-
-  * **expr1** Condition expression 
-  * **expr2** Return value if expr1 is not null 
-  * **expr3** Return value if expr1 is null
-
-
-**Since**:
-0.2.3
-
-
-Example:
-
-```sql
-
-SELECT nvl2(NULL, 2, 1);
--- output 1
-```
-
-
-**Supported Types**:
-
-* [`bool`, `bool`, `bool`]
-* [`bool`, `bool`, `date`]
-* [`bool`, `bool`, `number`]
-* [`bool`, `bool`, `string`]
-* [`bool`, `bool`, `timestamp`]
-* [`bool`, `date`, `bool`]
-* [`bool`, `date`, `date`]
-* [`bool`, `date`, `number`]
-* [`bool`, `date`, `string`]
-* [`bool`, `date`, `timestamp`]
-* [`bool`, `number`, `bool`]
-* [`bool`, `number`, `date`]
-* [`bool`, `number`, `number`]
-* [`bool`, `number`, `string`]
-* [`bool`, `number`, `timestamp`]
-* [`bool`, `string`, `bool`]
-* [`bool`, `string`, `date`]
-* [`bool`, `string`, `number`]
-* [`bool`, `string`, `string`]
-* [`bool`, `string`, `timestamp`]
-* [`bool`, `timestamp`, `bool`]
-* [`bool`, `timestamp`, `date`]
-* [`bool`, `timestamp`, `number`]
-* [`bool`, `timestamp`, `string`]
-* [`bool`, `timestamp`, `timestamp`]
-* [`date`, `bool`, `bool`]
-* [`date`, `bool`, `date`]
-* [`date`, `bool`, `number`]
-* [`date`, `bool`, `string`]
-* [`date`, `bool`, `timestamp`]
-* [`date`, `date`, `bool`]
-* [`date`, `date`, `date`]
-* [`date`, `date`, `number`]
-* [`date`, `date`, `string`]
-* [`date`, `date`, `timestamp`]
-* [`date`, `number`, `bool`]
-* [`date`, `number`, `date`]
-* [`date`, `number`, `number`]
-* [`date`, `number`, `string`]
-* [`date`, `number`, `timestamp`]
-* [`date`, `string`, `bool`]
-* [`date`, `string`, `date`]
-* [`date`, `string`, `number`]
-* [`date`, `string`, `string`]
-* [`date`, `string`, `timestamp`]
-* [`date`, `timestamp`, `bool`]
-* [`date`, `timestamp`, `date`]
-* [`date`, `timestamp`, `number`]
-* [`date`, `timestamp`, `string`]
-* [`date`, `timestamp`, `timestamp`]
-* [`number`, `bool`, `bool`]
-* [`number`, `bool`, `date`]
-* [`number`, `bool`, `number`]
-* [`number`, `bool`, `string`]
-* [`number`, `bool`, `timestamp`]
-* [`number`, `date`, `bool`]
-* [`number`, `date`, `date`]
-* [`number`, `date`, `number`]
-* [`number`, `date`, `string`]
-* [`number`, `date`, `timestamp`]
-* [`number`, `number`, `bool`]
-* [`number`, `number`, `date`]
-* [`number`, `number`, `number`]
-* [`number`, `number`, `string`]
-* [`number`, `number`, `timestamp`]
-* [`number`, `string`, `bool`]
-* [`number`, `string`, `date`]
-* [`number`, `string`, `number`]
-* [`number`, `string`, `string`]
-* [`number`, `string`, `timestamp`]
-* [`number`, `timestamp`, `bool`]
-* [`number`, `timestamp`, `date`]
-* [`number`, `timestamp`, `number`]
-* [`number`, `timestamp`, `string`]
-* [`number`, `timestamp`, `timestamp`]
-* [`string`, `bool`, `bool`]
-* [`string`, `bool`, `date`]
-* [`string`, `bool`, `number`]
-* [`string`, `bool`, `string`]
-* [`string`, `bool`, `timestamp`]
-* [`string`, `date`, `bool`]
-* [`string`, `date`, `date`]
-* [`string`, `date`, `number`]
-* [`string`, `date`, `string`]
-* [`string`, `date`, `timestamp`]
-* [`string`, `number`, `bool`]
-* [`string`, `number`, `date`]
-* [`string`, `number`, `number`]
-* [`string`, `number`, `string`]
-* [`string`, `number`, `timestamp`]
-* [`string`, `string`, `bool`]
-* [`string`, `string`, `date`]
-* [`string`, `string`, `number`]
-* [`string`, `string`, `string`]
-* [`string`, `string`, `timestamp`]
-* [`string`, `timestamp`, `bool`]
-* [`string`, `timestamp`, `date`]
-* [`string`, `timestamp`, `number`]
-* [`string`, `timestamp`, `string`]
-* [`string`, `timestamp`, `timestamp`]
-* [`timestamp`, `bool`, `bool`]
-* [`timestamp`, `bool`, `date`]
-* [`timestamp`, `bool`, `number`]
-* [`timestamp`, `bool`, `string`]
-* [`timestamp`, `bool`, `timestamp`]
-* [`timestamp`, `date`, `bool`]
-* [`timestamp`, `date`, `date`]
-* [`timestamp`, `date`, `number`]
-* [`timestamp`, `date`, `string`]
-* [`timestamp`, `date`, `timestamp`]
-* [`timestamp`, `number`, `bool`]
-* [`timestamp`, `number`, `date`]
-* [`timestamp`, `number`, `number`]
-* [`timestamp`, `number`, `string`]
-* [`timestamp`, `number`, `timestamp`]
-* [`timestamp`, `string`, `bool`]
-* [`timestamp`, `string`, `date`]
-* [`timestamp`, `string`, `number`]
-* [`timestamp`, `string`, `string`]
-* [`timestamp`, `string`, `timestamp`]
-* [`timestamp`, `timestamp`, `bool`]
-* [`timestamp`, `timestamp`, `date`]
-* [`timestamp`, `timestamp`, `number`]
-* [`timestamp`, `timestamp`, `string`]
-* [`timestamp`, `timestamp`, `timestamp`] 
-
-### function pmod
-
-```cpp
-pmod()
-```
-
-**Description**:
-
-Compute pmod of two arguments. If any param is NULL, output NULL. If divisor is 0, output NULL. 
-
-**Parameters**: 
-
-  * **dividend** any numeric number or NULL 
-  * **divisor** any numeric number or NULL
-
-
-**Since**:
-0.7.0
-
-
-
-Example:
-
-```sql
-
-select pmod(-10, 3);
--- output 2
-select pmod(10, -3);
--- output 1
-select pmod(10, 3);
--- output 1
-select pmod(-10, 0);
--- output NULL
-select pmod(-10, NULL);
--- output NULL
-select pmod(NULL, 2);
--- output NULL
-```
-
-
-**Supported Types**:
-
-* [`bool`, `bool`]
-* [`bool`, `number`]
-* [`number`, `bool`]
-* [`number`, `number`] 
-
-### function pow
-
-```cpp
-pow()
-```
-
-**Description**:
-
-Return the value of expr1 to the power of expr2. 
-
-**Parameters**: 
-
-  * **expr1** 
-  * **expr2** 
-
-
-**Since**:
-0.1.0
-
-
-Example:
-
-```sql
-
-SELECT POW(2, 10);
--- output 1024.000000
-```
-
-
-**Supported Types**:
-
-* [`bool`, `bool`]
-* [`bool`, `number`]
-* [`number`, `bool`]
-* [`number`, `number`] 
-
-### function power
-
-```cpp
-power()
-```
-
-**Description**:
-
-
-alias to pow 
-
-### function radians
-
-```cpp
-radians()
-```
-
-**Description**:
-
-Returns the argument X, converted from degrees to radians. (Note that π radians equals 180 degrees.) 
-
-**Since**:
-0.6.0
-
-
-Example:
-
-```sql
-
-SELECT RADIANS(90.0);
---output 1.570796326794896619231
-```
-
-
-**Supported Types**:
-
-* [`number`] 
-
-### function regexp_like
-
-```cpp
-regexp_like()
-```
-
-**Description**:
-
-pattern match same as RLIKE predicate (based on RE2) 
-
-**Parameters**: 
-
-  * **target** string to match
-  * **pattern** the regular expression match pattern
-
-
-**Since**:
-0.6.1
-
-
-Rules:
-
-1. Accept standard POSIX (egrep) syntax regular expressions
-    * dot (.) : matches any single-width ASCII character in an expression, with the exception of line break characters.
-    * asterisk (*) : matches the preceding token zero or more times.
-    * plus sign (+) : matches the preceding token one or more times.
-    * question mark (?) : identifies the preceding character as being optional.
-    * vertical bar (|) : separates tokens, one of which must be matched, much like a logical OR statement.
-    * parenthesis ('(' and ')') : groups multiple tokens together to disambiguate or simplify references to them.
-    * open square bracket ([) and close square bracket (]) : enclose specific characters or a range of characters to be matched. The characters enclosed inside square brackets are known as a character class.
-    * caret (^) : the caret has two different meanings in a regular expression, depending on where it appears: As the first character in a character class, a caret negates the characters in that character class. As the first character in a regular expression, a caret identifies the beginning of a term. In this context, the caret is often referred to as an anchor character.
-    * dollar sign ($) : as the last character in a regular expression, a dollar sign identifies the end of a term. In this context, the dollar sign is often referred to as an anchor character.
-    * backslash () : used to invoke the actual character value for a metacharacter in a regular expression.
-2. case sensitive
-3. backslash: sql string literal use backslash() for escape sequences, write '\' as backslash itself
-4. Return NULL if target or pattern is NULL
-
-Example:
-
-```sql
-
-select regexp_like('Mike', 'Mi.k')
--- output: true
-
-select regexp_like('append', 'ap*end')
--- output: true
-```
-
-
-**Supported Types**:
-
-* [`string`, `string`]
-* [`string`, `string`, `string`] 
-
-### function replace
-
-```cpp
-replace()
-```
-
-**Description**:
-
-replace(str, search[, replace]) - Replaces all occurrences of `search` with `replace`
-
-**Since**:
-0.5.2
-
-
-if replace is not given or is empty string, matched `search`s removed from final string
-
-Example:
-
-```sql
-
-select replace("ABCabc", "abc")
--- output "ABC"
-```
-
-
-**Supported Types**:
-
-* [`string`, `string`]
-* [`string`, `string`, `string`] 
-
-### function reverse
-
-```cpp
-reverse()
-```
-
-**Description**:
-
-Returns the reversed given string. 
-
-**Since**:
-0.4.0
-
-
-Example:
-
-```sql
-
-SELECT REVERSE('abc') as str1;
---output "cba"
-```
-
-
-**Supported Types**:
-
-* [`string`] 
-
-### function round
-
-```cpp
-round()
-```
-
-**Description**:
-
-Return the nearest integer value to expr (in floating-point format), rounding halfway cases away from zero, regardless of the current rounding mode. 
-
-**Parameters**: 
-
-  * **expr** 
-
-
-**Since**:
-0.1.0
-
-
-Example:
-
-```sql
-
-SELECT ROUND(1.23);
--- output 1
-```
-
-
-**Supported Types**:
-
-* [`bool`]
-* [`number`] 
-
-### function second
-
-```cpp
-second()
-```
-
-**Description**:
-
-Return the second for a timestamp. 
-
-**Since**:
-0.1.0
-
-
-Example:
-
-```sql
-
-select second(timestamp(1590115420000));
--- output 40
-```
-
-
-**Supported Types**:
-
-* [`int64`]
-* [`timestamp`] 
-
-### function sin
-
-```cpp
-sin()
-```
-
-**Description**:
-
-Return the sine of expr. 
-
-**Parameters**: 
-
-  * **expr** It is a single argument in radians.
-
-
-**Since**:
-0.1.0
-
-
-Example:
-
-```sql
-
-SELECT SIN(0);
--- output 0.000000
-```
-
-
-
-* The value returned by [sin()](/openmldb_sql/functions_and_operators/Files/udfs_8h.md#function-sin) is always in the range: -1 to 1.
-
-
-**Supported Types**:
-
-* [`number`] 
-
-### function size
-
-```cpp
-size()
-```
-
-**Description**:
-
-Get the size of a List (e.g., result of split) 
-
-**Since**:
-0.7.0
-
-
-Example:
-
-```sql
-
-select size(split("a b c", " "));
--- output 3
-```
-
-
-**Supported Types**:
-
-* [`list<string>`] 
-
-### function split
-
-```cpp
-split()
-```
-
-**Description**:
-
-Split string to list by delimeter. Null values are skipped. 
-
-**Parameters**: 
-
-  * **input** Input string 
-  * **delimeter** Delimeter of string
-
-
-**Since**:
-0.1.0
-
-
-
-Example:
-
-```sql
-
-select `join`(split("k1:1,k2:2", ","), " ") as out;
--- output "k1:1 k2:2"
-```
-
-
-**Supported Types**:
-
-* [`string`, `string`] 
-
-### function split_array
-
-```cpp
-split_array()
-```
-
-**Description**:
-
-Split string to array of string by delimeter. 
-
-**Since**:
-0.7.0
-
-
-```sql
-
-select array_contains(split_array("2,1", ","), "1") as c0;
--- output true
-```
-
-
-**Supported Types**:
-
-* [`string`, `string`] 
-
-### function split_by_key
-
-```cpp
-split_by_key()
-```
-
-**Description**:
-
-Split string by delimeter and split each segment as kv pair, then add each key to output list. Null or illegal segments are skipped. 
-
-**Parameters**: 
-
-  * **input** Input string 
-  * **delimeter** Delimeter of string 
-  * **kv_delimeter** Delimeter of kv pair
-
-
-**Since**:
-0.1.0
-
-
-
-Example:
-
-```sql
-
-select `join`(split_by_key("k1:1, k2:2", ",", ":"), " ") as out;
--- output "k1 k2"
-```
-
-
-**Supported Types**:
-
-* [`string`, `string`, `string`] 
-
-### function split_by_value
-
-```cpp
-split_by_value()
-```
-
-**Description**:
-
-Split string by delimeter and split each segment as kv pair, then add each value to output list. Null or illegal segments are skipped. 
-
-**Parameters**: 
-
-  * **input** Input string 
-  * **delimeter** Delimeter of string 
-  * **kv_delimeter** Delimeter of kv pair
-
-
-**Since**:
-0.1.0
-
-
-
-Example:
-
-```sql
-
-select `join`(split_by_value("k1:1, k2:2", ",", ":"), " ") as out;
--- output "1 2"
-```
-
-
-**Supported Types**:
-
-* [`string`, `string`, `string`] 
-
-### function sqrt
-
-```cpp
-sqrt()
-```
-
-**Description**:
-
-Return square root of expr. 
-
-**Parameters**: 
-
-  * **expr** It is a single argument in radians.
-
-
-**Since**:
-0.1.0
-
-
-Example:
-
-```sql
-
-SELECT SQRT(100);
--- output 10.000000
-```
-
-
-**Supported Types**:
-
-* [`number`] 
-
-### function std
-
-```cpp
-std()
-```
-
-**Description**:
-
-
-alias to stddev 
-
-### function stddev
-
-```cpp
-stddev()
-```
-
-**Description**:
-
-Compute sample standard deviation of values, i.e., `sqrt( sum((x_i - avg)^2) / (n-1) )`
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on.
-
-
-**Since**:
-0.7.2
-
-
-Alias function: `std`, `stddev_samp`
-
-
-Example:
-
-
-| value     |
-|  -------- |
-| 1     |
-| 2     |
-| 3     |
-| 4    |
-
-
-```sql
-
-SELECT stddev(value) OVER w;
--- output 1.290994
-```
-
-
-**Supported Types**:
-
-* [`list<number>`] 
-
-### function stddev_pop
-
-```cpp
-stddev_pop()
-```
-
-**Description**:
-
-Compute population standard deviation of values, i.e., `sqrt( sum((x_i - avg)^2) / n )`
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on.
-
-
-**Since**:
-0.7.2
-
-
-
-Example:
-
-
-| value     |
-|  -------- |
-| 1     |
-| 2     |
-| 3     |
-| 4    |
-
-
-```sql
-
-SELECT stddev_pop(value) OVER w;
--- output 1.118034
-```
-
-
-**Supported Types**:
-
-* [`list<number>`] 
-
-### function stddev_samp
-
-```cpp
-stddev_samp()
-```
-
-**Description**:
-
-
-alias to stddev 
-
-### function strcmp
-
-```cpp
-strcmp()
-```
-
-**Description**:
-
-Returns 0 if the strings are the same, -1 if the first argument is smaller than the second according to the current sort order, and 1 otherwise. 
-
-**Since**:
-0.1.0
-
-
-Example:
-
-```sql
-
-select strcmp("text", "text1");
--- output -1
-select strcmp("text1", "text");
--- output 1
-select strcmp("text", "text");
--- output 0
-```
-
-
-**Supported Types**:
-
-* [`string`, `string`] 
-
-### function string
-
-```cpp
-string()
-```
-
-**Description**:
-
-Return string converted from timestamp expression. 
-
-**Since**:
-0.1.0
-
-
-Example:
-
-```sql
-
-select string(timestamp(1590115420000));
--- output "2020-05-22 10:43:40"
-```
-
-
-**Supported Types**:
-
-* [`bool`]
-* [`date`]
-* [`number`]
-* [`timestamp`] 
-
-### function substr
-
-```cpp
-substr()
-```
-
-**Description**:
-
-
-alias to substring 
-
-### function substring
-
-```cpp
-substring()
-```
-
-**Description**:
-
-Return a substring `len` characters long from string str, starting at position `pos`. Alias function: `substr`
-
-**Parameters**: 
-
-  * **str** 
-  * **pos** define the begining of the substring.
-  * **len** length of substring. If len is less than 1, the result is the empty string.
-
-
-**Since**:
-0.1.0
-
-
-Example:
-
-```sql
-
-select substr("hello world", 3, 6);
--- output "llo wo"
-```
-
-
-
-* If `pos` is positive, the begining of the substring is `pos` charactors from the start of string.
-* If `pos` is negative, the beginning of the substring is `pos` characters from the end of the string, rather than the beginning.
-
-
-**Supported Types**:
-
-* [`string`, `int32`]
-* [`string`, `int32`, `int32`] 
-
-### function sum
-
-```cpp
-sum()
-```
-
-**Description**:
-
-Compute sum of values. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on.
-
-
-
-Example:
-
-
-| value     |
-|  -------- |
-| 0     |
-| 1     |
-| 2     |
-| 3     |
-| 4    |
-
-
-```sql
-
-SELECT sum(value) OVER w;
--- output 10
-```
-
-**Supported Types**:
-
-* [`list<number>`]
-* [`list<timestamp>`] 
-
-### function sum_cate
-
-```cpp
-sum_cate()
-```
-
-**Description**:
-
-Compute sum of values grouped by category key and output string. Each group is represented as 'K:V' and separated by comma in outputs and are sorted by key in ascend order. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **catagory** Specify catagory column to group by.
-
-
-
-Example:
-
-
-| value    | catagory     |
-|  -------- | -------- |
-| 0    | x     |
-| 1    | y     |
-| 2    | x     |
-| 3    | y     |
-| 4    | x    |
-
-
-```sql
-
-SELECT sum_cate(value, catagory) OVER w;
--- output "x:6,y:4"
-```
-
-**Supported Types**:
-
-* [`list<number>`, `list<date>`]
-* [`list<number>`, `list<int16>`]
-* [`list<number>`, `list<int32>`]
-* [`list<number>`, `list<int64>`]
-* [`list<number>`, `list<string>`]
-* [`list<number>`, `list<timestamp>`] 
-
-### function sum_cate_where
-
-```cpp
-sum_cate_where()
-```
-
-**Description**:
-
-Compute sum of values matching specified condition grouped by category key and output string. Each group is represented as 'K:V' and separated by comma in outputs and are sorted by key in ascend order. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **condition** Specify condition column. 
-  * **catagory** Specify catagory column to group by.
-
-
-
-Example:
-
-
-| value    | condition    | catagory     |
-|  -------- | -------- | -------- |
-| 0    | true    | x     |
-| 1    | false    | y     |
-| 2    | false    | x     |
-| 3    | true    | y     |
-| 4    | true    | x    |
-
-
-```sql
-
-SELECT sum_cate_where(value, condition, category) OVER w;
--- output "x:4,y:3"
-```
-
-**Supported Types**:
-
-* [`list<number>`, `list<bool>`, `list<date>`]
-* [`list<number>`, `list<bool>`, `list<int16>`]
-* [`list<number>`, `list<bool>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<string>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`] 
-
-### function sum_where
-
-```cpp
-sum_where()
-```
-
-**Description**:
-
-Compute sum of values match specified condition. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **condition** Specify condition column.
-
-
-**Since**:
-0.1.0
-
-
-
-Example:
-
-
-| value     |
-|  -------- |
-| 0     |
-| 1     |
-| 2     |
-| 3     |
-| 4    |
-
-
-```sql
-
-SELECT sum_where(value, value > 2) OVER w;
--- output 7
-```
-
-
-**Supported Types**:
-
-* [`list<number>`, `list<bool>`] 
-
-### function tan
-
-```cpp
-tan()
-```
-
-**Description**:
-
-Return the tangent of expr. 
-
-**Parameters**: 
-
-  * **expr** It is a single argument in radians.
-
-
-**Since**:
-0.1.0
-
-
-Example:
-
-```sql
-
-SELECT TAN(0);
--- output 0.000000
-```
-
-
-**Supported Types**:
-
-* [`number`] 
-
-### function timestamp
-
-```cpp
-timestamp()
-```
-
-**Description**:
-
-Cast int64, date or string expression to timestamp. 
-
-**Since**:
-0.1.0
-
-
-Supported string style:
-
-* yyyy-mm-dd
-* yyyymmdd
-* yyyy-mm-dd hh:mm:ss
-
-Example:
-
-```sql
-
-select timestamp(1590115420000);
--- output 1590115420000
-
-select timestamp("2020-05-22");
--- output 1590076800000
-
-select timestamp("2020-05-22 10:43:40");
--- output 1590115420000
-```
-
-
-**Supported Types**:
-
-* [`date`]
-* [`string`] 
-
-### function top
-
-```cpp
-top()
-```
-
-**Description**:
-
-Compute top k of values and output string separated by comma. The outputs are sorted in desc order. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **k** Fetch top n keys.
-
-
-**Since**:
-0.1.0
-
-
-
-Example:
-
-
-| value     |
-|  -------- |
-| 1     |
-| 2     |
-| 3     |
-| 4     |
-| 4    |
-
-
-```sql
-
-SELECT top(value, 3) OVER w;
--- output "4,4,3"
-```
-
-
-**Supported Types**:
-
-* [`list<date>`, `list<int32>`]
-* [`list<date>`, `list<int64>`]
-* [`list<number>`, `list<int32>`]
-* [`list<number>`, `list<int64>`]
-* [`list<string>`, `list<int32>`]
-* [`list<string>`, `list<int64>`]
-* [`list<timestamp>`, `list<int32>`]
-* [`list<timestamp>`, `list<int64>`] 
-
-### function top1_ratio
-
-```cpp
-top1_ratio()
-```
-
-**Description**:
-
-Compute the top1 key's ratio. 
-
-
-
-```
-    @since 0.1.0
-```
-
- **Supported Types**:
-
-* [`list<date>`]
-* [`list<number>`]
-* [`list<string>`]
-* [`list<timestamp>`] 
-
-### function top_n_key_avg_cate_where
-
-```cpp
-top_n_key_avg_cate_where()
-```
-
-**Description**:
-
-Compute average of values matching specified condition grouped by category key. Output string for top N category keys in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **condition** Specify condition column. 
-  * **catagory** Specify catagory column to group by. 
-  * **n** Fetch top n keys.
-
-
-
-Example:
-
-
-| value    | condition    | catagory     |
-|  -------- | -------- | -------- |
-| 0    | true    | x     |
-| 1    | false    | y     |
-| 2    | false    | x     |
-| 3    | true    | y     |
-| 4    | true    | x     |
-| 5    | true    | z     |
-| 6    | false    | z    |
-
-
-```sql
-
-    SELECT top_n_key_avg_cate_where(value, condition, catagory, 2)
-OVER w;
-    -- output "z:5,y:3"
-```
-
-**Supported Types**:
-
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int64>`] 
-
-### function top_n_key_count_cate_where
-
-```cpp
-top_n_key_count_cate_where()
-```
-
-**Description**:
-
-Compute count of values matching specified condition grouped by category key. Output string for top N category keys in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **condition** Specify condition column. 
-  * **catagory** Specify catagory column to group by. 
-  * **n** Fetch top n keys.
-
-
-
-Example:
-
-
-| value    | condition    | catagory     |
-|  -------- | -------- | -------- |
-| 0    | true    | x     |
-| 1    | true    | y     |
-| 2    | false    | x     |
-| 3    | true    | y     |
-| 4    | false    | x     |
-| 5    | true    | z     |
-| 6    | true    | z    |
-
-
-```sql
-
-    SELECT top_n_key_count_cate_where(value, condition, catagory, 2)
-OVER w;
-    -- output "z:2,y:2"
-```
-
-**Supported Types**:
-
-* [`list<bool>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<bool>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<bool>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<bool>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<bool>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<bool>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<bool>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<bool>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<bool>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<bool>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<bool>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<bool>`, `list<bool>`, `list<timestamp>`, `list<int64>`]
-* [`list<date>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<date>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<date>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<date>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<date>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<date>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<date>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<date>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<date>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<date>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<date>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<date>`, `list<bool>`, `list<timestamp>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int64>`]
-* [`list<string>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<string>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<string>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<string>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<string>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<string>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<string>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<string>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<string>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<string>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<string>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<string>`, `list<bool>`, `list<timestamp>`, `list<int64>`]
-* [`list<timestamp>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<timestamp>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<timestamp>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<timestamp>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<timestamp>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<timestamp>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<timestamp>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<timestamp>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<timestamp>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<timestamp>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<timestamp>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<timestamp>`, `list<bool>`, `list<timestamp>`, `list<int64>`] 
-
-### function top_n_key_max_cate_where
-
-```cpp
-top_n_key_max_cate_where()
-```
-
-**Description**:
-
-Compute maximum of values matching specified condition grouped by category key. Output string for top N category keys in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **condition** Specify condition column. 
-  * **catagory** Specify catagory column to group by. 
-  * **n** Fetch top n keys.
-
-
-
-Example:
-
-
-| value    | condition    | catagory     |
-|  -------- | -------- | -------- |
-| 0    | true    | x     |
-| 1    | false    | y     |
-| 2    | false    | x     |
-| 3    | true    | y     |
-| 4    | true    | x     |
-| 5    | true    | z     |
-| 6    | false    | z    |
-
-
-```sql
-
-    SELECT top_n_key_max_cate_where(value, condition, catagory, 2)
-OVER w;
-    -- output "z:5,y:3"
-```
-
-**Supported Types**:
-
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int64>`] 
-
-### function top_n_key_min_cate_where
-
-```cpp
-top_n_key_min_cate_where()
-```
-
-**Description**:
-
-Compute minimum of values matching specified condition grouped by category key. Output string for top N category keys in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **condition** Specify condition column. 
-  * **catagory** Specify catagory column to group by. 
-  * **n** Fetch top n keys.
-
-
-
-Example:
-
-
-| value    | condition    | catagory     |
-|  -------- | -------- | -------- |
-| 0    | true    | x     |
-| 1    | true    | y     |
-| 2    | false    | x     |
-| 3    | true    | y     |
-| 4    | false    | x     |
-| 5    | true    | z     |
-| 6    | true    | z    |
-
-
-```sql
-
-    SELECT top_n_key_min_cate_where(value, condition, catagory, 2)
-OVER w;
-    -- output "z:5,y:1"
-```
-
-**Supported Types**:
-
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int64>`] 
-
-### function top_n_key_sum_cate_where
-
-```cpp
-top_n_key_sum_cate_where()
-```
-
-**Description**:
-
-Compute sum of values matching specified condition grouped by category key. Output string for top N category keys in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **condition** Specify condition column. 
-  * **catagory** Specify catagory column to group by. 
-  * **n** Fetch top n keys.
-
-
-
-Example:
-
-
-| value    | condition    | catagory     |
-|  -------- | -------- | -------- |
-| 0    | true    | x     |
-| 1    | true    | y     |
-| 2    | false    | x     |
-| 3    | true    | y     |
-| 4    | false    | x     |
-| 5    | true    | z     |
-| 6    | true    | z    |
-
-
-```sql
-
-    SELECT top_n_key_sum_cate_where(value, condition, catagory, 2)
-OVER w;
-    -- output "z:11,y:4"
-```
-
-**Supported Types**:
-
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int64>`] 
-
-### function top_n_value_avg_cate_where
-
-```cpp
-top_n_value_avg_cate_where()
-```
-
-**Description**:
-
-Compute average of values matching specified condition grouped by category key. Output string for top N aggregate values in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **condition** Specify condition column. 
-  * **catagory** Specify catagory column to group by. 
-  * **n** Fetch top n keys.
-
-
-
-Example:
-
-
-| value    | condition    | catagory     |
-|  -------- | -------- | -------- |
-| 0    | true    | x     |
-| 1    | false    | y     |
-| 2    | false    | x     |
-| 3    | false    | y     |
-| 4    | true    | x     |
-| 5    | true    | z     |
-| 6    | false    | z    |
-
-
-```sql
-
-    SELECT top_n_value_avg_cate_where(value, condition, catagory, 2)
-OVER w;
-    -- output "z:5,x:4"
-```
-
-**Supported Types**:
-
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int64>`] 
-
-### function top_n_value_count_cate_where
-
-```cpp
-top_n_value_count_cate_where()
-```
-
-**Description**:
-
-Compute count of values matching specified condition grouped by category key. Output string for top N aggregate values in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **condition** Specify condition column. 
-  * **catagory** Specify catagory column to group by. 
-  * **n** Top N.
-
-
-
-Example:
-
-
-| value    | condition    | catagory     |
-|  -------- | -------- | -------- |
-| 0    | true    | x     |
-| 1    | true    | y     |
-| 2    | true    | x     |
-| 3    | false    | y     |
-| 4    | true    | x     |
-| 5    | true    | z     |
-| 6    | true    | z    |
-
-
-```sql
-
-    SELECT top_n_value_count_cate_where(value, condition, catagory, 2)
-OVER w;
-    -- output "x:3,y:2"
-```
-
-**Supported Types**:
-
-* [`list<bool>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<bool>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<bool>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<bool>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<bool>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<bool>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<bool>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<bool>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<bool>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<bool>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<bool>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<bool>`, `list<bool>`, `list<timestamp>`, `list<int64>`]
-* [`list<date>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<date>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<date>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<date>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<date>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<date>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<date>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<date>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<date>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<date>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<date>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<date>`, `list<bool>`, `list<timestamp>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int64>`]
-* [`list<string>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<string>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<string>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<string>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<string>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<string>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<string>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<string>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<string>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<string>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<string>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<string>`, `list<bool>`, `list<timestamp>`, `list<int64>`]
-* [`list<timestamp>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<timestamp>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<timestamp>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<timestamp>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<timestamp>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<timestamp>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<timestamp>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<timestamp>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<timestamp>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<timestamp>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<timestamp>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<timestamp>`, `list<bool>`, `list<timestamp>`, `list<int64>`] 
-
-### function top_n_value_max_cate_where
-
-```cpp
-top_n_value_max_cate_where()
-```
-
-**Description**:
-
-Compute maximum of values matching specified condition grouped by category key. Output string for top N aggregate values in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **condition** Specify condition column. 
-  * **catagory** Specify catagory column to group by. 
-  * **n** Fetch Top n.
-
-
-
-Example:
-
-
-| value    | condition    | catagory     |
-|  -------- | -------- | -------- |
-| 0    | true    | x     |
-| 1    | false    | y     |
-| 2    | false    | x     |
-| 3    | true    | y     |
-| 4    | true    | x     |
-| 5    | true    | z     |
-| 6    | false    | z    |
-
-
-```sql
-
-    SELECT top_n_value_max_cate_where(value, condition, catagory, 2)
-OVER w;
-    -- output "z:5,x:4"
-```
-
-**Supported Types**:
-
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int64>`] 
-
-### function top_n_value_min_cate_where
-
-```cpp
-top_n_value_min_cate_where()
-```
-
-**Description**:
-
-Compute minimum of values matching specified condition grouped by category key. Output string for top N aggregate values in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **condition** Specify condition column. 
-  * **catagory** Specify catagory column to group by. 
-  * **n** Fetch top n keys.
-
-
-
-Example:
-
-
-| value    | condition    | catagory     |
-|  -------- | -------- | -------- |
-| 0    | true    | x     |
-| 1    | true    | y     |
-| 2    | true    | x     |
-| 3    | true    | y     |
-| 4    | false    | x     |
-| 5    | true    | z     |
-| 6    | true    | z    |
-
-
-```sql
-
-    SELECT top_n_value_min_cate_where(value, condition, catagory, 2)
-OVER w;
-    -- output "z:5,x:2"
-```
-
-**Supported Types**:
-
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int64>`] 
-
-### function top_n_value_sum_cate_where
-
-```cpp
-top_n_value_sum_cate_where()
-```
-
-**Description**:
-
-Compute sum of values matching specified condition grouped by category key. Output string for top N aggregate values in descend order. Each group is represented as 'K:V' and separated by comma(,). Empty string returned if no rows selected. 
-
-**Parameters**: 
-
-  * **value** Specify value column to aggregate on. 
-  * **condition** Specify condition column. 
-  * **catagory** Specify catagory column to group by. 
-  * **n** Top N.
-
-
-
-Example:
-
-
-| value    | condition    | catagory     |
-|  -------- | -------- | -------- |
-| 0    | true    | x     |
-| 1    | true    | y     |
-| 2    | false    | x     |
-| 3    | false    | y     |
-| 4    | true    | x     |
-| 5    | true    | z     |
-| 6    | true    | z    |
-
-
-```sql
-
-    SELECT top_n_value_sum_cate_where(value, condition, catagory, 2)
-OVER w;
-    -- output "z:11,x:4"
-```
-
-**Supported Types**:
-
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<date>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int16>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int32>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<int64>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<string>`, `list<int64>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int32>`]
-* [`list<number>`, `list<bool>`, `list<timestamp>`, `list<int64>`] 
-
-### function topn_frequency
-
-```cpp
-topn_frequency()
-```
-
-**Description**:
-
-Return the topN keys sorted by their frequency. 
-
-
-
-```
-    @since 0.1.0
-```
-
- **Supported Types**:
-
-* [`list<date>`, `list<int32>`]
-* [`list<number>`, `list<int32>`]
-* [`list<string>`, `list<int32>`]
-* [`list<timestamp>`, `list<int32>`] 
-
-### function truncate
-
-```cpp
-truncate()
-```
-
-**Description**:
-
-Return the nearest integer that is not greater in magnitude than the expr. 
-
-**Parameters**: 
-
-  * **expr** 
-
-
-**Since**:
-0.1.0
-
-
-Example:
-
-```sql
-
-SELECT TRUNCATE(1.23);
--- output 1.0
-```
-
-
-**Supported Types**:
-
-* [`bool`]
-* [`number`] 
-
-### function ucase
-
-```cpp
-ucase()
-```
-
-**Description**:
-
-Convert all the characters to uppercase. Note that characters values > 127 are simply returned. 
-
-**Since**:
-0.4.0
-
-
-Example:
-
-```sql
-
-SELECT UCASE('Sql') as str1;
---output "SQL"
-```
-
-
-**Supported Types**:
-
-* [`string`] 
-
-### function unhex
-
-```cpp
-unhex()
-```
-
-**Description**:
-
-Convert hexadecimal to binary string. 
-
-**Since**:
-0.7.0
-
-
-Example:
-
-```sql
-
-select unhex("537061726B2053514C");
---output "Spark SQL"
-
-select unhex("7B");
---output "{"
-
-select unhex("zfk");
---output NULL
-```
-
-
-**Supported Types**:
-
-* [`string`] 
-
-### function unix_timestamp
-
-```cpp
-unix_timestamp()
-```
-
-**Description**:
-
-Cast date or string expression to unix_timestamp. If empty string or NULL is provided, return current timestamp. 
-
-**Since**:
-0.7.0
-
-
-Supported string style:
-
-* yyyy-mm-dd
-* yyyymmdd
-* yyyy-mm-dd hh:mm:ss
-
-Example:
-
-```sql
-
-select unix_timestamp("2020-05-22");
--- output 1590076800
-
-select unix_timestamp("2020-05-22 10:43:40");
--- output 1590115420
-
-select unix_timestamp("");
--- output 1670404338 (the current timestamp)
-```
-
-
-**Supported Types**:
-
-* [`date`]
-* [`string`] 
-
-### function upper
-
-```cpp
-upper()
-```
-
-**Description**:
-
-
-alias to ucase 
-
-### function week
-
-```cpp
-week()
-```
-
-**Description**:
-
-
-alias to weekofyear 
-
-### function weekofyear
-
-```cpp
-weekofyear()
-```
-
-**Description**:
-
-Return the week of year for a timestamp or date. 
-
-**Since**:
-0.1.0
-
-
-Example:
-
-```sql
-
-select weekofyear(timestamp(1590115420000));
--- output 21
-select week(timestamp(1590115420000));
--- output 21
-```
-
-
-**Supported Types**:
-
-* [`date`]
-* [`int64`]
-* [`timestamp`] 
-
-### function window_split
-
-```cpp
-window_split()
-```
-
-**Description**:
-
-For each string value from specified column of window, split by delimeter and add segment to output list. Null values are skipped. 
-
-**Since**:
-0.1.0
-
-
-
-**Supported Types**:
-
-* [`list<string>`, `list<string>`] 
-
-### function window_split_by_key
-
-```cpp
-window_split_by_key()
-```
-
-**Description**:
-
-For each string value from specified column of window, split by delimeter and then split each segment as kv pair, then add each key to output list. Null and illegal segments are skipped. 
-
-**Since**:
-0.1.0
-
-
-
-**Supported Types**:
-
-* [`list<string>`, `list<string>`, `list<string>`] 
-
-### function window_split_by_value
-
-```cpp
-window_split_by_value()
-```
-
-**Description**:
-
-For each string value from specified column of window, split by delimeter and then split each segment as kv pair, then add each value to output list. Null and illegal segments are skipped. 
-
-**Since**:
-0.1.0
-
-
-
-**Supported Types**:
-
-* [`list<string>`, `list<string>`, `list<string>`] 
-
-### function year
-
-```cpp
-year()
-```
-
-**Description**:
-
-Return the year part of a timestamp or date. 
-
-**Since**:
-0.1.0
-
-
-Example:
-
-```sql
-
-select year(timestamp(1590115420000));
--- output 2020
 ```
 
 
